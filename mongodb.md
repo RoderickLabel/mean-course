@@ -22,10 +22,16 @@ Para mostrar o banco que você está utilizando:
 $ db
 ```
 
-Para alternar em bancos diferentes use:
+Para pedir ajudar:
+```sh
+$ help
+```
+
+Para alternar em bancos diferentes, ou criar um banco novo use:
 
 ```sh
 $ use <database>
+$ use node-angular
 ```
 
 If you want to check your databases list, use the command show dbs.

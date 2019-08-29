@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const Post = require("./models/post");
 const db = "posts";
 
-mongoose.connect("mongodb://localhost:27017/test", { useNewUrlParser: true })
+mongoose.connect("mongodb://localhost:27017/node-angular", { useNewUrlParser: true })
     .then(() => {
         console.log("Connected to database!");
     })
@@ -34,7 +34,7 @@ app.post("/api/posts", (req, res, next) => {
         title: req.body.title,
         content: req.body.content
     });
-    console.log(post);
+    post.save();
     res.status(201).json({
         message: "Post added successfully"
     });
