@@ -1,7 +1,17 @@
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const Post = require("./models/post");
+const db = "posts";
+
+mongoose.connect("mongodb://localhost:27017/test", { useNewUrlParser: true })
+    .then(() => {
+        console.log("Connected to database!");
+    })
+    .catch(() => {
+        console.log("Connection failed!");
+    });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
